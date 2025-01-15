@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup & Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div id="signup-container" class="container">
+    <h2>Signup</h2>
+    <label for="signup-username">Username:</label>
+    <input type="text" id="signup-username" required><br><br>
+    <label for="signup-password">Password:</label>
+    <input type="password" id="signup-password" required><br><br>
+    <button class="btn" onclick="signup()">Signup</button>
+</div>
+
+<div id="login-container" class="container hidden">
+    <h2>Login</h2>
+    <label for="login-username">Username:</label>
+    <input type="text" id="login-username" required><br><br>
+    <label for="login-password">Password:</label>
+    <input type="password" id="login-password" required><br><br>
+    <button class="btn" onclick="login()">Login</button>
+</div>
+
+<div id="cart-container" class="container hidden">
+    <h2>Welcome to the Cart</h2>
+    <p>Here are your items:</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button class="btn" onclick="logout()">Logout</button>
+</div>
+
+<script>
+    function signup() {
+        const username = document.getElementById('signup-username').value;
+        const password = document.getElementById('signup-password').value;
+
+        if (username && password) {
+            localStorage.setItem('user', JSON.stringify({ username, password }));
+            alert('Signup successful! Please login.');
+            document.getElementById('signup-container').classList.add('hidden');
+            document.getElementById('login-container').classList.remove('hidden');
+        } else {
+            alert('Please fill in all fields.');
+        }
+    }
+
+    function login() {
+        const username = document.getElementById('login-username').value;
+        const password = document.getElementById('login-password').value;
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+
+        if (storedUser && username === storedUser.username && password === storedUser.password) {
+            alert('Login successful!');
+            document.getElementById('login-container').classList.add('hidden');
+            document.getElementById('cart-container').classList.remove('hidden');
+        } else {
+            alert('Invalid username or password.');
+        }
+    }
+
+    function logout() {
+        document.getElementById('cart-container').classList.add('hidden');
+        document.getElementById('login-container').classList.remove('hidden');
+        alert('You have been logged out.');
+    }
+</script>
+
+</body>
+</html>
+

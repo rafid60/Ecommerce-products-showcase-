@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Form Urban Vogue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            justify-content: center;
+            align-items: center;
+        }
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #444;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1> Return Form</h1>
+    </div>
+
+    <div class="container">
+        <h2>Return Request Form</h2>
+        <p>Please complete the form below to request a return. Make sure to fill in all required fields.</p>
+
+        <form action="/submit-return" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="order-id">Order ID:</label>
+            <input type="text" id="order-id" name="order_id" placeholder="Enter your order ID" required>
+
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product_name" placeholder="Enter the product name" required>
+
+            <label for="reason">Reason for Return:</label>
+            <select id="reason" name="reason" required>
+                <option value="">Select a reason</option>
+                <option value="defective">Defective/Damaged Item</option>
+                <option value="wrong-item">Received Wrong Item</option>
+                <option value="not-satisfied">Not Satisfied with Product</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Provide any additional details (optional)"></textarea>
+
+            <button type="submit">Submit Return Request</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header.watches-header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header.watches-header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.product-grid.watches-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
+
+.product-card {
+    background: black;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 1px 1px 4px 4px gray;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(10px 10px 20px rgba(36, 36, 36, 0.5));
+}
+
+.product-image {
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.product-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-details h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: white;
+}
+
+.product-details p {
+    color: silver;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.price {
+    margin-top: 10px;
+}
+
+.current-price {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.buy-now-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #00a9ff; /* Exact blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.buy-now-btn:hover {
+    transform: scale(1.05);
+    background: #007acc; /* Darker blue on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    background-color: black;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 200px;
+    margin: 10px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: lightgray;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links li a {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
